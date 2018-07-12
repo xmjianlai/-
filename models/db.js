@@ -2,11 +2,11 @@
 
 const mysql = require('mysql');
 
-const pool  = mysql.createPool({
-    host : '127.0.0.1',
-    user : 'root',
-    password : 'root',
-    database : 'letao'
+const pool = mysql.createPool({
+    host: '127.0.0.1',
+    user: 'root',
+    password: 'root',
+    database: 'letao'
 });
 
 /**
@@ -15,7 +15,7 @@ const pool  = mysql.createPool({
  */
 // 如果用户传递了两个参数，那么第一个就是 SQL 操作字符串， 第二个就是回调函数
 // 如果是三个参数：第一个SQL字符串，第二个数组，第三个参数回调函数
-exports.query = function() {
+exports.query = function () {
     let args = arguments;
 
     let sqlStr = args[0];
@@ -31,11 +31,11 @@ exports.query = function() {
         throw new Error('参数个数不匹配');
     }
 
-    pool.getConnection(function(err, connection) {
+    pool.getConnection(function (err, connection) {
         if (err) {
             callback(err);
         }
-        connection.query(sqlStr, params, function(err, rows) {
+        connection.query(sqlStr, params, function (err, rows) {
             if (err) {
                 callback(err);
             }
@@ -44,5 +44,3 @@ exports.query = function() {
         });
     });
 };
-
-
