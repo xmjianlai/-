@@ -78,7 +78,7 @@ body.active{
 .lt_mian{
     height: 100%;
     width: 100%;
-    
+    /* padding: 0 10px; */
     /* background-color: pink; */
     /* padding-top: 20px; */
 }
@@ -107,4 +107,13 @@ body.active{
 .min-right{
     width: 45%;
     height: 400px;
+}
+.table.table-bordered th,
+.table.table-bordered td {
+  text-align: center;
+  vertical-align: middle;
+}
+.mb_20{
+    margin-bottom: 20px;
+    margin-left: 15px;
 }
